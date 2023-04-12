@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block main %}
+<section class="container has-text-centered my-5">
+    <div class="column is-4 is-offset-4">
+        <h3 class="title has-text-black">Register</h3>
+        <hr>
+        <p class="subtitle has-text-black">Create an account</p>
+        <div class="box">
+            <form action="/register" method="POST" class="my-4">
+                <div class="field is-6">
+                    <label for="" class="label has-text-left">First Name</label>
+                    <div class="control">
+                        <input type="text" name="fname" class="input" autofocus required>
+                    </div>
+                </div>
+                <div class="field is-6">
+                    <label for="" class="label has-text-left">Last Name</label>
+                    <div class="control">
+                        <input type="text" name="lname" class="input" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="" class="label has-text-left">Email</label>
+                    <div class="control">
+                        <input type="email" name="email" class="input" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="" class="label has-text-left">Username</label>
+                    <div class="control">
+                        <input type="text" name="username" class="input" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="" class="label has-text-left">Password</label>
+                    <div class="control">
+                        <input type="password" name="password" class="input" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="" class="label has-text-left">Confirm Password</label>
+                    <div class="control">
+                        <input type="password" name="confirmation" class="input" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="select">
+                        <select name="option">
+                            <option disabled selected value="">Choose Learning Status</option>
+                            <option value="1">Student</option>
+                            <option value="2">Tutor</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="button is-block is-success is-fullwidth my-4">Register</button>
+                <p class="help has-text-grey is-size-6">Already have an account? <a href="{{ url_for('login') }}">Login</a>
+                </p>
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

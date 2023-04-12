@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Tutors
+{% endblock %}
+
+{% block main %}
+{% for i in range(len) %}
+<section class="container spaced">
+    <div class="tutors">
+        <img src="https://images.unsplash.com/photo-1549589237-9e70b6be4da8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=925&q=80" alt="Pancake" />
+        <div class="tutors__text pr-4">
+            <h1>{{ tutors[i][1] + " " + tutors[i][2] }}</h1>
+            <div class="tutors__text__star">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            </div>
+            <small>15 Reviews</small>
+            <p class="mt-2">
+                Native English Speaker looking to teach and inspire. Willing to go above and beyond to ensure that learning English is fun and interactive. I use a variety of teaching methods and take into consideration the specific needs of student(s) to ensure they are able to progress and develop their English for any challenge. Specialties include technical English, creative and essay writing.
+            </p>
+            <div class="tutors__text__timing">
+                <div class="tutors__text__timing_time">
+                    <h2>Free Trial</h2>
+                    <p>30 min</p>
+                </div>
+                <div class="tutors__text__timing_time">
+                    <h2>Class Time</h2>
+                    <p>60 min</p>
+                </div>
+            </div>
+            <form action="/tutors" method="POST">
+                <button class="btn" type="submit" name="apply" value="{{ i + 1 }}">apply <i class="fa fa-arrow-right"></i></button>
+            </form>
+        </div>
+        <div class="material">
+            <h2>Materials</h2>
+            <ul>
+                <li>Worksheets</li>
+                <li>Exercises</li>
+                <li>Practice</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+{% endblock %}

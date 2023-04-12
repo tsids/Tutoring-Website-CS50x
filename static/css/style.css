@@ -1,0 +1,218 @@
+.line {
+  background: #e7b93a;
+}
+
+/* Sticky Footer */
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+}
+
+/* Navbar */
+nav.navbar {
+  position: sticky;
+  top: 0;
+  min-height: auto;
+}
+
+/* Message Flashing */
+@keyframes fadeout {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+div.notification {
+  position: fixed;
+  width: 100%;
+  animation: fadeout 3s 1s both cubic-bezier(0.68, -0.55, 0.265, 1.3);
+  z-index: 100;
+}
+
+/* Back to Top Button */
+#back-to-top {
+  font-size: 1.5em;
+  color: #ff9800;
+  position: fixed;
+  bottom: 10px;
+  right: 5px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+@media (min-width: 786px) {
+  #back-to-top:hover {
+    cursor: pointer;
+    color: #333;
+  }
+}
+
+#back-to-top:active {
+  color: #555;
+}
+
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Settings */
+.username {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* Confirmation */
+.vcenter {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Tutors */
+.spaced {
+  margin: 50px auto !important;
+}
+
+.tutors {
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  grid-template-columns: 300px 600px;
+  border-radius: 5px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
+}
+.tutors img {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px 0 0 5px;
+}
+.tutors .btn {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  background-color: #fc9400;
+  color: #fff;
+  padding: 22px 45px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+}
+.tutors .btn i {
+  margin-left: 20px;
+  font-size: 1.5rem;
+}
+.tutors__text {
+  padding: 40px 40px 0;
+}
+.tutors__text h1 {
+  color: #351897;
+  font-weight: 400;
+}
+.tutors__text__star span {
+  font-size: 0.8rem;
+  color: #ffa800;
+}
+.tutors__text p {
+  font-size: 0.9rem;
+  margin-right: 30px;
+}
+.tutors__text__timing {
+  display: flex;
+  margin: 20px 0 10px;
+}
+.tutors__text__timing_time {
+  margin-right: 40px;
+}
+.tutors__text__timing h2 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #818189;
+}
+.tutors__text__timing p {
+  color: #351897;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.material {
+  padding: 40px 40px 0;
+  justify-content: end;
+}
+.material li {
+  list-style-type: circle;
+}
+
+/* Students */
+.students {
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  grid-template-columns: 300px 600px;
+  border-radius: 5px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
+}
+.students img {
+  height: 150px;
+  border-radius: 5px 0 0 5px;
+}
+.students .btn {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  background-color: #fc9400;
+  color: #fff;
+  padding: 22px 45px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+}
+.students .btn i {
+  margin-left: 20px;
+  font-size: 1.5rem;
+}
+.students__text {
+  padding: 40px;
+}
+.students__text h1 {
+  color: #351897;
+  font-weight: 400;
+}
+
+/* Error */
+.error {
+  font-family: "Open Sans", sans-serif;
+}
+.error img {
+  width: 500px;
+}

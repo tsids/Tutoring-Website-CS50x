@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Students
+{% endblock %}
+
+{% block main %}
+{% if len is defined %}
+<div class="has-text-centered">
+    <h1 class="is-uppercase is-size-4 my-4">My Students</h1>
+</div>
+{% for i in range(len) %}
+<section class="container spaced">
+    <div class="students">
+        <img src="../static/images/student.jpg" alt="Profile pic saying no image" />
+        <div class="students__text is-flex is-align-items-center">
+            <h1 class="is-size-3">{{ students[i][0][1] + " " + students[i][0][2] }}</h1>
+            <form>
+                <button class="btn" type="submit" name="message">Message <i class="fa fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endfor %}
+{% endif %}
+
+{% endblock %}

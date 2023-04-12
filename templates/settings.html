@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %} Settings {% endblock %}
+
+{% block main %}
+<section class="vcenter container has-text-centered my-5">
+    <section class="column is-4 is-offset-4">
+        <h2 class="has-text-weight-bold is-size-3 mb-3">Username: <span class="username">{{ username }}</span></h2>
+        <section class="my-4">
+            <h3 class="is-size-4 mb-2">Change Password</h3>
+            <form action="/settings" method="post">
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="password" name="password" placeholder="Password" autofocus>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="password" name="new_password" placeholder="New Password">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="password" name="confirm" placeholder="Confirm Password">
+                    </div>
+                </div>
+
+                <input class="button is-primary" type="submit" value="Change Password">
+            </form>
+
+        </section>
+
+        <section class="my-6">
+            <h3 class="is-size-4 mb-2">Account Deletion</h3>
+            <button class="button is-danger modal-button">Delete Account</button>
+            <div class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Delete Account</p>
+                        <span class="cancel icon is-medium is-clickable" aria-hidden="true" aria-label="close">
+                            <i class="fas fa-times fa-lg"></i>
+                        </span>
+                    </header>
+                    <section class="modal-card-body">
+                        Are you sure you want to delete your account? This is an irreversable process. Deleting will destroy all your data and this account can not be recovered.
+                    </section>
+                    <footer class="modal-card-foot is-flex is-justify-content-flex-end">
+                        <button class="button"><span class="cancel">Cancel</span></button>
+                        <form action="/settings" method="post">
+                            <button type="submit" class="button is-danger is-outlined cancel" name="delete" value="delete">Delete Immediately</input>
+                        </form>
+                    </footer>
+                </div>
+            </div>
+        </section>
+        </div>
+    </section>
+
+    {% endblock %}
