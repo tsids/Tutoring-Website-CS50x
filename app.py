@@ -19,8 +19,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure SQLite database
-# conn = sqlite3.connect("database.db")
-# db = conn.cursor()
+conn = sqlite3.connect("database.db")
+db = conn.cursor()
 
 def login_required(f):
     """
@@ -375,5 +375,5 @@ def students():
                 return render_template("students.html")
 
 
-# if __name__ == '__main__':
-#     app.run(host='127.0.0.1', port=5000)
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=5000)
